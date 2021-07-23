@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="shortcut icon" type="image/png" href="images/download.png">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Yomogi&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+SC:wght@300&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sim Chiu</title>
+</head>
+<body>
+    <div class="background">
+        <div>
+            <div  class="sam" onclick="homepage()">Sim Chiu</div>
+            <ul style="display:flex;list-style-type: none;justify-content:center;align-items:center;padding-top: 50px;">
+                <li><a href="" target="new"><i class="fa fa-twitter" style="font-size:20px;color:rgb(241, 241, 241);padding: 1vh 10px;"></i></a></li>
+                <li><a href="https://www.instagram.com/shimmiebabe/" target="new"><i class="fa fa-instagram" style="font-size:20px;color:rgb(241, 241, 241);padding: 1vh 10px"></i></a></li>
+                <li><a href="" target="new"><i class="fa fa-facebook-f" style="font-size:20px;color:rgb(241, 241, 241);padding: 1vh 10px"></i></a></li>
+    
+            </ul>
+        </div>
+        <div style="color:white;display:flex;flex-direction:column;" id="home">
+            <div class="noob"><a class="glow" id="textToRotate" onclick="rotate()">I</a>nsta Model</div>
+            <div class="fact" id="fact"></div>
+        </div>
+
+        <div style="display:none;color:white;justify-content:center;align-items:center;"id="about">
+            <div style="width:13vw;margin-right: 30px;" class="mainppimg">
+                <img src="images/mainpp.jpeg" width="100%">
+            </div>
+            <div class="container" style="text-align:left;margin-left: 20px;">
+                <ol style="list-style:none;font-size:x-large;font-family: 'Yomogi', cursive;">
+                    <li>I am a instagram model</li>
+                    <li>I am open to work</li>
+                    <li>I do photo shoots and videos</li>
+                    <li>I love travelling and exploring</li>
+                    <li>I love to try new things</li>
+                </ol>
+            </div>
+        </div>
+
+        <div style="display: none;flex-direction: column;" id="shit">
+
+            <div style="display:flex;color:white;align-items:center;justify-content:center;">
+                <div style="margin-right: 20px;font-size:4vw;cursor: pointer;"onclick="changeimg(0)">&#60</div>
+                <img src="images/eatingbanana.jpeg" class="bananaimg">
+                <div style="margin-left: 20px;font-size:4vw;cursor: pointer;"onclick="changeimg(1)">&#62</div>
+            </div>
+            <p class="bananatext">I am bold and I like sun</p>
+        </div>
+
+        <div style="display: none;flex-direction: column;" id="contact">
+            <div style="color:white;font-size:x-large;font-family: 'Yomogi', cursive;">Get in Touch</div>
+           
+            <div class="formcontainer">
+                <form action="https://formsubmit.co/kushagraagra008@gmail.com" method="POST">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://counsellingguru.netlify.app">
+                    <input type="hidden" name="_subject" value="New submission!">
+                    <input type="hidden" name="_autoresponse" value="Thank You for contacting us">
+                    
+                    <div class="input">
+                        <input type="text" name="name" placeholder="Full name*" required class="input-field">
+                    </div>
+                    
+                    <div class="input">
+                        <input type="email" name="email" placeholder="Email*" required class="input-field">
+                    </div>
+                
+                    <div class="input">
+                        <input type="text" name="message" placeholder="Message*" required class="input-field extra">
+                    </div>
+
+                    <div class="input">
+                        <button type="submit" class="submit-button">Submit</button>
+                    </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div><a onclick="remove(2)">CONTACT ME</a></div>
+            <div><a onclick="remove(1)">ABOUT ME</a></div>
+            <div><a onclick="remove(0)">MY WORK</a></div>
+        </div>
+
+    </div>
+<script>
+    var count=0;
+    var currentimg=1;
+    function changeimg(operation)
+    {
+        if(operation)
+        {
+            if(currentimg<4)
+            {
+                currentimg++;
+            }
+            else
+            {
+                currentimg=1;
+            }
+        }
+        else
+        {
+            if(currentimg>1)
+            {
+                currentimg--;
+            }
+            else
+            {
+                currentimg=4;
+            }
+        }
+        console.log(currentimg)
+        if(currentimg==1)
+        {
+            document.getElementById("shit").innerHTML=`<div style="display:flex;color:white;align-items:center;justify-content:center;">
+                <div style="margin-right: 20px;font-size:4vw;cursor: pointer;"onclick="changeimg(0)">&#60</div>
+                <img src="images/eatingbanana.jpeg" class="bananaimg">
+                <div style="margin-left: 20px;font-size:4vw;cursor: pointer;"onclick="changeimg(1)">&#62</div>
+            </div>
+            <p class="bananatext">I am bold and I like sun</p>`
+        }
+        else if(currentimg==2)
+        {
+            document.getElementById("shit").innerHTML=`
+            <div style="display:flex;color:white;align-items:center;justify-content:center;">
+                <div style="margin-right: 20px;font-size:4vw;cursor: pointer;"onclick="changeimg(0)">&#60</div>
+                <img src="images/whatgoat.jpeg" class="bananaimg">
+                <div style="margin-left: 20px;font-size:4vw;cursor: pointer;"onclick="changeimg(1)">&#62</div>
+            </div>
+            <p class="bananatext">I am cute....</p>`
+        }
+        else if(currentimg==3)
+        {
+            document.getElementById("shit").innerHTML=`
+            <div style="display:flex;color:white;align-items:center;justify-content:center;">
+                <div style="margin-right: 20px;font-size:4vw;cursor: pointer;"onclick="changeimg(0)">&#60</div>
+                <img src="images/withcartoon.jpeg" class="bananaimg">
+                <div style="margin-left: 20px;font-size:4vw;cursor: pointer;"onclick="changeimg(1)">&#62</div>
+            </div>
+            <p class="bananatext">I am sexy....</p>`
+        }
+        else
+        {
+            document.getElementById("shit").innerHTML=`
+            <div style="display:flex;color:white;align-items:center;justify-content:center;">
+                <div style="margin-right: 20px;font-size:4vw;cursor: pointer;"onclick="changeimg(0)">&#60</div>
+                <img src="images/dance.jpeg" class="bananaimg">
+                <div style="margin-left: 20px;font-size:4vw;cursor: pointer;"onclick="changeimg(1)">&#62</div>
+            </div>
+            <p class="bananatext">I love travelling</p>`
+        }
+
+    }
+
+
+
+
+    function rotate()
+    {
+        if(count%2==0)
+        {
+            var audio = new Audio('yamete.mp3');
+            audio.play();
+            document.getElementById('textToRotate').innerHTML=`<div id='loading'>I</div>`
+            document.getElementById('fact').innerHTML=`<p class="typing-demo"><i class="system">I am a model, I am open for work and you can contact me now</i></p>`
+        }
+        else
+        {
+            document.getElementById('textToRotate').innerHTML=`<div id='loading'>I</div>`
+            document.getElementById('fact').innerHTML=``
+
+        }
+        count++;
+    }
+    function homepage()
+    {
+        if(count%2==0)
+        {
+            count++;
+        }
+        rotate()
+        document.getElementById("shit").innerHTML=`<div style="display:flex;color:white;align-items:center;justify-content:center;">
+                <div style="margin-right: 20px;font-size:4vw;cursor: pointer;"onclick="changeimg(0)">&#60</div>
+                <img src="images/eatingbanana.jpeg" class="bananaimg">
+                <div style="margin-left: 20px;font-size:4vw;cursor: pointer;"onclick="changeimg(1)">&#62</div>
+            </div>
+            <p class="bananatext">I am bold and I like sun</p>`
+        document.getElementById("shit").style.display="none"
+        document.getElementById("about").style.display="none"
+        document.getElementById("contact").style.display="none"
+        document.getElementById("home").style.display="flex"
+    }
+    function remove(check)
+    {
+        document.getElementById("home").style.display="none"
+        if (check==1)
+        {
+            document.getElementById("shit").innerHTML=`<div style="display:flex;color:white;align-items:center;justify-content:center;">
+                <div style="margin-right: 20px;font-size:4vw;cursor: pointer;"onclick="changeimg(0)">&#60</div>
+                <img src="images/eatingbanana.jpeg" class="bananaimg">
+                <div style="margin-left: 20px;font-size:4vw;cursor: pointer;"onclick="changeimg(1)">&#62</div>
+            </div>
+            <p class="bananatext">I am bold and I like sun</p>`
+            document.getElementById("shit").style.display="none"
+            document.getElementById("contact").style.display="none"
+            document.getElementById("about").style.display="flex"
+        }
+        else if(check==0)
+        {
+            document.getElementById("shit").innerHTML=`<div style="display:flex;color:white;align-items:center;justify-content:center;">
+                <div style="margin-right: 20px;font-size:4vw;cursor: pointer;"onclick="changeimg(0)">&#60</div>
+                <img src="images/eatingbanana.jpeg" class="bananaimg">
+                <div style="margin-left: 20px;font-size:4vw;cursor: pointer;"onclick="changeimg(1)">&#62</div>
+            </div>
+            <p class="bananatext">I am bold and I like sun</p>`
+            document.getElementById("about").style.display="none"
+            document.getElementById("contact").style.display="none"
+            document.getElementById("shit").style.display="flex"
+        }
+        else{
+            document.getElementById("shit").innerHTML=`<div style="display:flex;color:white;align-items:center;justify-content:center;">
+                <div style="margin-right: 20px;font-size:4vw;cursor: pointer;"onclick="changeimg(0)">&#60</div>
+                <img src="images/eatingbanana.jpeg" class="bananaimg">
+                <div style="margin-left: 20px;font-size:4vw;cursor: pointer;"onclick="changeimg(1)">&#62</div>
+            </div>
+            <p class="bananatext">I am bold and I like sun</p>`
+            document.getElementById("contact").style.display="flex"
+            document.getElementById("about").style.display="none"
+            document.getElementById("shit").style.display="none"
+        }
+       
+    }
+</script>
+
+</body>
+</html>
